@@ -1,0 +1,172 @@
+// Global component styles
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    height: 100%;
+    color: #3a3b45;
+    font-size: 1.2rem;
+}
+
+page-link {
+    padding: 1.2rem 1.5rem !important;
+}
+
+a {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Main page wrapper
+#wrapper {
+  display: flex;
+  #content-wrapper {
+    background-color: $gray-100;
+    width: 100%;
+    overflow-x: hidden;
+    #content {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+// Set container padding to match gutter width instead of default 15px
+.container,
+.container-fluid {
+  padding-left: $grid-gutter-width;
+  padding-right: $grid-gutter-width;
+}
+
+// Scroll to top button
+.scroll-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  display: none;
+  width: 2.75rem;
+  height: 2.75rem;
+  text-align: center;
+  color: $white;
+  background: fade-out($gray-800, .5);
+  line-height: 46px;
+  &:focus,
+  &:hover {
+    color: white;
+  }
+  &:hover {
+    background: $gray-800;
+  }
+  i {
+    font-weight: 800;
+  }
+}
+
+/*Devexpress Styles*/
+/*.dx-toolbar .dx-toolbar-after {
+    float: right;
+    padding-top: 20px;
+    width: 300px;
+}
+
+.dx-datagrid-group-panel .dx-group-panel-item {
+    text-align: center;
+}
+
+.dx-datagrid-headers + .dx-datagrid-rowsview {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.dx-datagrid .dx-data-row > td.bullet {
+    padding-top: 0;
+    padding-bottom: 0;
+}*/
+/*.dx-theme-material-typography a {
+        color: white;
+    }*/
+/*.dx-command-expand {
+    padding: 0 4px 0 4px !important;
+}*/
+
+.selected-area-tracker {
+    opacity: 0.3;
+}
+.dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused) > td,
+.dx-datagrid-rowsview .dx-selection.dx-row:not(.dx-row-focused):hover > td {
+    background-color: #0055a5 !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
+
+
+h5,
+input,
+select,
+.btn,
+.navbar {
+    font-size: 23pt !important;
+}
+
+p,
+label,
+.dropdown-menu,
+.table,
+.dataTables_wrapper
+.modal-body
+.control-label {
+    font-size: 18pt !important;
+    color: #3a3b45;
+}
+
+.table-hover tbody tr:hover {
+    color: #3a3b45;
+}
+
+    .input-group-lg > .form-control:not(textarea), .input-group-lg > .custom-select {
+        height: 78px !important;
+    }
+
+    .custom-wave-sine,
+    .custom-wave-triangle {
+        height: 30px !important;
+        margin-bottom: 5px !important;
+    }
+
+    .proccess-wave-img {
+        height: 25px;
+        opacity: 0.5;
+    }
+
+    button {
+        font-size: 20pt !important;
+        margin: 10px !important;
+    }
+
+    .input-group-lg > .input-group-prepend > .btn, .input-group-lg > .input-group-append > .btn {
+        margin: 0px !important;
+    }
+
+    .datepicker.dropdown-menu {
+        font-size: 20pt !important;
+    }
+
+    .ui-datepicker {
+        width: 450px !important;
+        height: auto !important;
+        border: 1px solid blue !important;
+    }
+
+    .ui-datepicker td span,
+    .ui-datepicker td a {
+        padding: 10px !important;
+        font-size: 20pt !important;
+    }
+
+    .ui-datepicker td {
+        padding: 4px !important;
+    }

@@ -1,0 +1,260 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MarsLabs.Driver.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:MarsLabs.Driver.Management.Controllers.DeviceController">
+            <summary>
+            Cihaz Yönetim Modülü
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.#ctor(Microsoft.Extensions.Logging.ILogger{MarsLabs.Driver.Management.Controllers.DeviceController},MarsLabs.Driver.Service.Spi.ISpiDevice,MarsLabs.Driver.Service.Ads1115.IAds1115Device,MarsLabs.Driver.Service.Mcp4725.IMcp4725Device,MarsLabs.Driver.Service.Txds.ITdcs,MarsLabs.Driver.Service.Txds.ITacs,MarsLabs.Driver.Service.Utilities.ITaskSchedular,Microsoft.Extensions.Options.IOptions{MarsLabs.Driver.Settings.DeviceSettings})">
+            <summary>
+            Cihaz Yönetim Modülü
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Ad9833_Write(MarsLabs.Driver.WebApi.Models.Requests.Ad9833WriteRequest)">
+            <summary>
+            AD9833 Modülüne sinyal bilgisi yazmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+            <response code="200">Sinyal bilgisi başarılı bir şekilde yazıldı.</response>
+            <response code="400">Sinyal bilgisi yazılırken hata oluştu.</response>    
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Mcp41010_Write(MarsLabs.Driver.WebApi.Models.Requests.Mcp41010WriteRequest)">
+            <summary>
+            MCP41010 Modülüne genlik bilgisini iletir.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+            <response code="200">Genlik bilgisi başarılı bir şekilde yazıldı.</response>
+            <response code="400">Genlik bilgisi yazılırken hata oluştu.</response>    
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Mcp4725_Write(MarsLabs.Driver.WebApi.Models.Requests.Mcp4725WriteRequest)">
+            <summary>
+            MCP4725 Modülüne voltaj bilgisini iletir.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+            <response code="200">Voltaj bilgisi başarılı bir şekilde yazıldı.</response>
+            <response code="400">Voltaj bilgisi yazılırken hata oluştu.</response>    
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Ads1115_Result">
+            <summary>
+            ADS1115 Modülünden kanal bilgilerini okur.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+            <response code="200">Kanal bilgisi başarılı bir şekilde okundu.</response>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Ads1115_CalculateResult">
+            <summary>
+            ADS1115 Modülünden kanal bilgilerini Operasyonel işe göre hesaplayarak döner.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+            <response code="200">Kanal bilgisi başarılı bir şekilde okundu.</response>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Ads1115_Start">
+            <summary>
+            ADS1115 Modülünü kanal bilgilerini okuması için başlatır. Ads1115_Result ile sonuçları kontrol edilmelidir.
+            </summary>
+            <returns>BAŞARILI : OK(200)</returns>
+            <response code="200">Kanal bilgisi okuma isteği başarılı bir şekilde iletildi.</response>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.Ads1115_Stop">
+            <summary>
+            ADS1115 Modülünü kanal bilgilerini okumasını durdurur.
+            </summary>
+            <returns>BAŞARILI : OK(200)</returns>
+            <response code="200">Kanal bilgisi okuma isteği başarılı bir şekilde durduruldu.</response>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.TACS_Write(MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest)">
+            <summary>
+            TACS operasyonunu başlatmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.TDCS_Write(MarsLabs.Driver.WebApi.Models.Requests.TdcsWriteRequest)">
+            <summary>
+            TDCS operasyonunu başlatmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.TXCS_Stop">
+            <summary>
+            TDCS operasyonunu başlatmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+        </member>
+        <member name="T:MarsLabs.Driver.Management.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.Management.Startup">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.Management.Startup.Configuration">
+            <summary>
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline. 
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.Ad9833WriteRequest">
+            <summary>
+            AD9833 Modülüne bilgi yazmak için kullanılır.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.Ad9833WriteRequest.Shape">
+            <summary>
+            Dalga Türü
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.Ad9833WriteRequest.Frequency">
+            <summary>
+            Dalga Frekansı (0-1000 arasında değer alır)
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest">
+            <summary>
+            TDCS-TACS Modülüne ait default bilgileri iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.ElectrodNumber">
+            <summary>
+            1 ile 5 arasında değer alır. Birden fazla elektrod için virgül kullanınız. Örnek: 1,2,3 gibi.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.TimeMinute">
+            <summary>
+            Modülünün çalışma süresini belirtir. 1 ile 60 arasında dk olarak değer alır.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.ExponantialPower">
+            <summary>
+            Exponansiyel hareketlerin genliğini belirtir. 0.1 ile 100.0 arasında bir değer alır
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.StartType">
+            <summary>
+            Voltaj iletimi başlarken nasıl olmalıdır.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.StopType">
+            <summary>
+            Voltaj iletimi biterken nasıl olmalıdır.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.BaseRequest.StopUrl">
+            <summary>
+            İşlem tamamlandığında geri bildirim alıncak website adresidir. Cevap: HttpDelete: Success ve Message bilgisi içerecektir.
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.Mcp41010WriteRequest">
+            <summary>
+            MCP41010 Modülüne genlik bilgisini iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.Mcp41010WriteRequest.Gain">
+            <summary>
+            0 - 255 arasında genlik bilgisi
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.Mcp4725WriteRequest">
+            <summary>
+            MCP4725 Modülüne voltaj bilgisini iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.Mcp4725WriteRequest.Voltage">
+            <summary>
+            0V - 5V Arasında voltaj bilgisi
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest">
+            <summary>
+            TDCS Modülüne bilgileri iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest.Gain">
+            <summary>
+            0 - 4 arasında genlik bilgisi
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest.Shape">
+            <summary>
+            Dalga Türü
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest.Frequency">
+            <summary>
+            Dalga Frekansı (0-1000 arasında değer alır)
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.TdcsWriteRequest">
+            <summary>
+            TDCS Modülüne bilgileri iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TdcsWriteRequest.Voltage">
+            <summary>
+            0V - 4V Arasında voltaj bilgisi
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse">
+            <summary>
+            Hesaplanmış cihaz değerleri
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.Strength">
+            <summary>
+            Sinyal şiddeti
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.Resistance">
+            <summary>
+            Kafa direnci
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.LastReadTime">
+            <summary>
+            Son başarılı okuma zamanı
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.LastErrorTime">
+            <summary>
+            Son hatalı okuma zamanı
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.LastStatus">
+            <summary>
+            Son okuma durumu. True: Başarılı False: Başarısız.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse.ProcessStatus">
+            <summary>
+            İşlem çalışıyor mu?
+            </summary>
+        </member>
+    </members>
+</doc>
