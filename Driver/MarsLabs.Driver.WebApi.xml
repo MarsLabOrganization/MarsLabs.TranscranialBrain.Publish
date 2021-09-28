@@ -9,7 +9,7 @@
             Cihaz Yönetim Modülü
             </summary>
         </member>
-        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.#ctor(Microsoft.Extensions.Logging.ILogger{MarsLabs.Driver.Management.Controllers.DeviceController},MarsLabs.Driver.Service.Spi.ISpiDevice,MarsLabs.Driver.Service.Ads1115.IAds1115Device,MarsLabs.Driver.Service.Mcp4725.IMcp4725Device,MarsLabs.Driver.Service.Txds.ITdcs,MarsLabs.Driver.Service.Txds.ITacs,MarsLabs.Driver.Service.Utilities.ITaskSchedular,Microsoft.Extensions.Options.IOptions{MarsLabs.Driver.Settings.DeviceSettings})">
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.#ctor(Microsoft.Extensions.Logging.ILogger{MarsLabs.Driver.Management.Controllers.DeviceController},MarsLabs.Driver.Service.Spi.ISpiDevice,MarsLabs.Driver.Service.Ads1115.IAds1115Device,MarsLabs.Driver.Service.Mcp4725.IMcp4725Device,MarsLabs.Driver.Service.Txds.ITdcs,MarsLabs.Driver.Service.Txds.ITacs,MarsLabs.Driver.Service.Txds.ITrns,MarsLabs.Driver.Service.Txds.IShame,MarsLabs.Driver.Service.Utilities.ITaskSchedular,Microsoft.Extensions.Options.IOptions{MarsLabs.Driver.Settings.DeviceSettings})">
             <summary>
             Cihaz Yönetim Modülü
             </summary>
@@ -75,6 +75,18 @@
         <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.TDCS_Write(MarsLabs.Driver.WebApi.Models.Requests.TdcsWriteRequest)">
             <summary>
             TDCS operasyonunu başlatmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.TRNS_Write(MarsLabs.Driver.WebApi.Models.Requests.TrnsWriteRequest)">
+            <summary>
+            TRNS operasyonunu başlatmak için kullanılır.
+            </summary>
+            <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
+        </member>
+        <member name="M:MarsLabs.Driver.Management.Controllers.DeviceController.SHAME_Write(MarsLabs.Driver.WebApi.Models.Requests.ShameWriteRequest)">
+            <summary>
+            SHAME operasyonunu başlatmak için kullanılır.
             </summary>
             <returns>BAŞARILI : OK(200) - BAŞARISIZ : BAD REQUEST (400) </returns>
         </member>
@@ -191,6 +203,16 @@
             0V - 5V Arasında voltaj bilgisi
             </summary>
         </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.ShameWriteRequest">
+            <summary>
+            TDCS Modülüne shame bilgileri iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.ShameWriteRequest.Voltage">
+            <summary>
+            0V - 4V Arasında voltaj bilgisi
+            </summary>
+        </member>
         <member name="T:MarsLabs.Driver.WebApi.Models.Requests.TacsWriteRequest">
             <summary>
             TDCS Modülüne bilgileri iletir.
@@ -219,6 +241,21 @@
         <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TdcsWriteRequest.Voltage">
             <summary>
             0V - 4V Arasında voltaj bilgisi
+            </summary>
+        </member>
+        <member name="T:MarsLabs.Driver.WebApi.Models.Requests.TrnsWriteRequest">
+            <summary>
+            TDCS Modülüne TRNS bilgileri iletir.
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TrnsWriteRequest.Voltage">
+            <summary>
+            0V - 4V Arasında voltaj bilgisi
+            </summary>
+        </member>
+        <member name="P:MarsLabs.Driver.WebApi.Models.Requests.TrnsWriteRequest.Frequency">
+            <summary>
+            Dalga Frekansı (0-500 arasında değer alır)
             </summary>
         </member>
         <member name="T:MarsLabs.Driver.WebApi.Models.Responses.Ads1115_CalculateResultResponse">
